@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced HTML5 Content & Form</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 2rem;
+        color: #333;
+        background-color: #f9f9f9;
+      }
+      header,
+      section,
+      footer {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 1rem;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #2c3e50;
+      }
+      img,
+      audio,
+      video {
+        max-width: 100%;
+        height: auto;
+        border-radius: 6px;
+        margin: 10px 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #ecf0f1;
+      }
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #3498db;
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+      }
+      button {
+        background-color: #3498db;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+      button:hover {
+        background-color: #2980b9;
+      }
+      fieldset {
+        border: 1px solid #ddd;
+        padding: 1.5rem;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+      }
+      legend {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+      footer {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #7f8c8d;
+      }
+      .required::after {
+        content: " *";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <h1>HTML5 Content & Form Mastery</h1>
+      <p>
+        Welcome to our interactive demo showcasing advanced HTML5 features,
+        including structured content, embedded media, and a robust, accessible
+        form with native validation.
+      </p>
+    </header>
+
+    <!-- Section 1: Lists and Media -->
+    <section>
+      <h2>Key Features of Modern Web Design</h2>
+      <p>
+        Here are essential components that make websites engaging and
+        accessible:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Semantic HTML5</strong>: Improves SEO and accessibility.
+        </li>
+        <li>
+          <strong>Responsive Layouts</strong>: Adapts to all screen sizes.
+        </li>
+        <li>
+          <strong>Accessible Forms</strong>: Usable by everyone, including
+          assistive technologies.
+        </li>
+        <li><strong>Embedded Media</strong>: Enhances user engagement.</li>
+        <li>
+          <strong>Native Validation</strong>: Ensures data quality without
+          JavaScript.
+        </li>
+      </ul>
+
+      <h3>Video Demonstration</h3>
+      <p>Watch how HTML5 transforms web experiences:</p>
+      <video controls>
+        <source
+          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      <h3>Audio Sample</h3>
+      <p>Listen to a sample narration:</p>
+      <audio controls>
+        <source
+          src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <!-- Section 2: Table -->
+    <section>
+      <h2>HTML5 Input Types Overview</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Input Type</th>
+            <th>Description</th>
+            <th>Example Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>text</code></td>
+            <td>Standard text input</td>
+            <td>Username, Name</td>
+          </tr>
+          <tr>
+            <td><code>email</code></td>
+            <td>Email format validation</td>
+            <td>User email address</td>
+          </tr>
+          <tr>
+            <td><code>tel</code></td>
+            <td>Telephone number input</td>
+            <td>Contact number</td>
+          </tr>
+          <tr>
+            <td><code>date</code></td>
+            <td>Date picker</td>
+            <td>Birth date</td>
+          </tr>
+          <tr>
+            <td><code>number</code></td>
+            <td>Numeric input with constraints</td>
+            <td>Age, Quantity</td>
+          </tr>
+          <tr>
+            <td><code>url</code></td>
+            <td>Validates web URLs</td>
+            <td>Personal website</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Section 3: HTML5 Form with Validation -->
+    <section>
+      <h2>Registration Form</h2>
+      <p>
+        Please fill out the form below to register. All fields marked with
+        <span style="color: red">*</span> are required.
+      </p>
+
+      <form action="#" method="post" novalidate>
+        <!-- Personal Information Fieldset -->
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <div class="form-group">
+            <label for="fullName" class="required">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              required
+              minlength="2"
+              maxlength="100"
+              autocomplete="name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="required">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="(555) 123-4567"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}|$$[0-9]{3}$$ [0-9]{3}-[0-9]{4}|[0-9]{10}"
+              autocomplete="tel"
+            />
+            <small>Format: 123-456-7890 or (123) 456-7890</small>
+          </div>
+
+          <div class="form-group">
+            <label for="birthDate" class="required">Date of Birth</label>
+            <input
+              type="date"
+              id="birthDate"
+              name="birthDate"
+              required
+              min="1900-01-01"
+              max="2010-12-31"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="age" class="required">Age</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              min="18"
+              max="120"
+              required
+              placeholder="18+"
+            />
+          </div>
+        </fieldset>
+
+        <!-- Account Information Fieldset -->
+        <fieldset>
+          <legend>Account Information</legend>
+
+          <div class="form-group">
+            <label for="username" class="required">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Choose a username"
+              required
+              minlength="4"
+              maxlength="20"
+              pattern="[a-zA-Z0-9_]+"
+              autocomplete="username"
+            />
+            <small>Letters, numbers, and underscores only.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="required">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="At least 8 characters"
+              required
+              minlength="8"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            />
+            <small>Must include uppercase, lowercase, and a number.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword" class="required"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Re-enter your password"
+              required
+              minlength="8"
+            />
+          </div>
+        </fieldset>
+
+        <!-- Preferences and Bio -->
+        <fieldset>
+          <legend>Preferences & Bio</legend>
+
+          <div class="form-group">
+            <label for="website">Personal Website</label>
+            <input
+              type="url"
+              id="website"
+              name="website"
+              placeholder="https://yourwebsite.com"
+              autocomplete="url"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="color">Favorite Color</label>
+            <input type="color" id="color" name="color" value="#3498db" />
+          </div>
+
+          <div class="form-group">
+            <label for="bio">Short Bio</label>
+            <textarea
+              id="bio"
+              name="bio"
+              rows="4"
+              placeholder="Tell us about yourself..."
+              maxlength="500"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="newsletter">Subscribe to Newsletter?</label>
+            <select id="newsletter" name="newsletter">
+              <option value="yes">Yes, please!</option>
+              <option value="no" selected>No, thanks</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- Consent and Submit -->
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="consent" value="agreed" required /> I
+            agree to the <a href="#" target="_blank">Terms and Conditions</a>*
+          </label>
+        </div>
+
+        <button type="submit">Register Now</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 HTML5 Mastery Demo. All rights reserved.</p>
+      <p>
+        This form uses <strong>native HTML5 validation</strong> — no JavaScript
+        required.
+      </p>
+    </footer>
+  </body>
+</html>
